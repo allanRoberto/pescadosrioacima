@@ -118,9 +118,9 @@ namespace :db do
       run "source /path-to/.bash_profile && cd #{deploy_to}/current/webroot && #{wp} db export #{temp} && cd -"
       download("#{temp}", "db/#{filename}", :via=> :scp)
       if "#{stage}" == "prod"
-        search = "yourdomain.com" #FIXME
+        search = "pescadosrioacima.com.br"
       else
-        search = "#{application}-#{stage}.yourdomain.com" #FIXME
+        search = "#{application}.artezzo.com.br"
       end
       replace = local_domain
       puts "searching (#{search}) and replacing (#{replace}) domain information"
@@ -144,9 +144,9 @@ namespace :db do
       temp = "/tmp/#{release_name}_#{application}_#{filename}"
       run "touch #{temp} && chmod 600 #{temp}"
       if "#{stage}" == "prod"
-        replace = "yourdomain.com" #FIXME
+        replace = "pescadosrioacima.com.br"
       else
-        replace = "#{application}-#{stage}.yourdomain.com" #FIXME
+        replace = "#{application}.artezzo.com.br"
       end
       search = local_domain
       puts "searching (#{search}) and replacing (#{replace}) domain information"
