@@ -14,3 +14,105 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Page Builder Modules Styles */
 @import url("./includes/builder/styles/frontend-builder-style.css?ver=2.5.3");
+
+@font-face {
+    font-family: 'flamencoregular';
+    src: url('fonts/flamenco-regular-webfont.eot');
+    src: url('fonts/flamenco-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/flamenco-regular-webfont.woff2') format('woff2'),
+         url('fonts/flamenco-regular-webfont.woff') format('woff'),
+         url('fonts/flamenco-regular-webfont.ttf') format('truetype'),
+         url('fonts/flamenco-regular-webfont.svg#flamencoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#main-header {
+	background: #f0f9fe;
+	border-top: 5px solid #00adef;
+}
+
+.et_header_style_left #et-top-navigation {
+	padding: 6px 0 10px 0 !important;
+}
+
+.et_header_style_left #et-top-navigation nav > ul > li > a {
+	font-family: 'flamencoregular';
+	text-transform: uppercase;
+	color: #0084b6;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+.et_header_style_left #et-top-navigation nav > ul > li > a:hover {
+	background: #00adef;
+	color: #fff;
+}
+
+.icons-header {
+	float: right;
+	width: 32%;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#logo {
+	left: -10px;
+	position: relative;
+}
+
+.line-header {
+	border-bottom: 1px dashed #0084b6;
+}
+
+.link-icon-header {
+	width: 35px;
+	height: 35px;
+	margin-right: 5px;
+	display: block;
+	float: left;
+}
+
+.icon-twitter {
+	background: url('images/icon-twitter.png') left top no-repeat;
+	width: 35px;
+	height: 35px;
+	display: block;
+}
+
+.search-container {
+	width: 71%;
+    float: right;
+    margin-left: 10px;
+}
+
+.icon-mail {
+	background: url('images/icon-mail.png') left top no-repeat;
+	width: 34px;
+	height: 35px;
+	display: block;
+}
+
+.search-field {
+	width: 100%;	
+	border:1px solid #00adef;
+	border-radius: 5px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+}
+
+.input-search {
+  background: url('images/icon-search.png') left top no-repeat transparent;
+  width: 18px;
+  height: 27px;
+  border:0px !important;
+  text-indent: -999999px;
+  position: absolute;
+  right: 8px;
+  margin-top: -26px;
+  cursor: pointer;
+}

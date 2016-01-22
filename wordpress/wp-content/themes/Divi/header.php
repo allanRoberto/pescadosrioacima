@@ -55,65 +55,11 @@
 
 	$et_top_info_defined = $et_secondary_nav_items->top_info_defined;
 ?>
-
-	<?php if ( $et_top_info_defined ) : ?>
-		<div id="top-header">
-			<div class="container clearfix">
-
-			<?php if ( $et_contact_info_defined ) : ?>
-
-				<div id="et-info">
-				<?php if ( '' !== ( $et_phone_number = et_get_option( 'phone_number' ) ) ) : ?>
-					<span id="et-info-phone"><?php echo esc_html( $et_phone_number ); ?></span>
-				<?php endif; ?>
-
-				<?php if ( '' !== ( $et_email = et_get_option( 'header_email' ) ) ) : ?>
-					<a href="<?php echo esc_attr( 'mailto:' . $et_email ); ?>"><span id="et-info-email"><?php echo esc_html( $et_email ); ?></span></a>
-				<?php endif; ?>
-
-				<?php
-				if ( true === $show_header_social_icons ) {
-					get_template_part( 'includes/social_icons', 'header' );
-				} ?>
-				</div> <!-- #et-info -->
-
-			<?php endif; // true === $et_contact_info_defined ?>
-
-				<div id="et-secondary-menu">
-				<?php
-					if ( ! $et_contact_info_defined && true === $show_header_social_icons ) {
-						get_template_part( 'includes/social_icons', 'header' );
-					} else if ( $et_contact_info_defined && true === $show_header_social_icons ) {
-						ob_start();
-
-						get_template_part( 'includes/social_icons', 'header' );
-
-						$duplicate_social_icons = ob_get_contents();
-
-						ob_end_clean();
-
-						printf(
-							'<div class="et_duplicate_social_icons">
-								%1$s
-							</div>',
-							$duplicate_social_icons
-						);
-					}
-
-					if ( '' !== $et_secondary_nav ) {
-						echo $et_secondary_nav;
-					}
-
-					et_show_cart_total();
-				?>
-				</div> <!-- #et-secondary-menu -->
-
-			</div> <!-- .container -->
-		</div> <!-- #top-header -->
-	<?php endif; // true ==== $et_top_info_defined ?>
-
+	
+	
 		<header id="main-header" data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
 			<div class="container clearfix et_menu_container">
+			
 			<?php
 				$logo = ( $user_logo = et_get_option( 'divi_logo' ) ) && '' != $user_logo
 					? $user_logo
@@ -125,7 +71,29 @@
 						<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" data-height-percentage="<?php echo esc_attr( et_get_option( 'logo_height', '54' ) ); ?>" />
 					</a>
 				</div>
-				<div id="et-top-navigation" data-height="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>" data-fixed-height="<?php echo esc_attr( et_get_option( 'minimized_menu_height', '40' ) ); ?>">
+				<?php if ( $et_top_info_defined ) : ?>
+
+				<div class="icons-header">
+					<a href="#" class="link-icon-header"><span class="icon-twitter"></span></a>
+					<a href="#" class="link-icon-header"><span class="icon-mail"></span></a>
+					<div class="search-container">
+						<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<?php
+								printf( '<input type="search" class="search-field" placeholder="%1$s" value="%2$s" name="s" title="%3$s" />',
+									esc_attr__( 'Busca', 'Divi' ),
+									get_search_query(),
+									esc_attr__( 'Search for:', 'Divi' )
+								);
+							?>
+							<input type="submit" value="Enviar" class="input-search" />
+							</form>
+					</div>
+
+				</div>
+				<div class="clearfix line-header"></div>
+				<?php endif; // true ==== $et_top_info_defined ?>
+
+				<div id="et-top-navigation" data-height="<?php echo esc_attr( et_get_option( 'menu_height', '40' ) ); ?>" data-fixed-height="<?php echo esc_attr( et_get_option( 'minimized_menu_height', '40' ) ); ?>">
 					<nav id="top-menu-nav">
 					<?php
 						$menuClass = 'nav';
@@ -151,37 +119,11 @@
 					?>
 					</nav>
 
-					<?php
-					if ( ! $et_top_info_defined ) {
-						et_show_cart_total( array(
-							'no_text' => true,
-						) );
-					}
-					?>
 
-					<?php if ( false !== et_get_option( 'show_search_icon', true ) ) : ?>
-					<div id="et_top_search">
-						<span id="et_search_icon"></span>
-					</div>
-					<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 
 					<?php do_action( 'et_header_top' ); ?>
 				</div> <!-- #et-top-navigation -->
 			</div> <!-- .container -->
-			<div class="et_search_outer">
-				<div class="container et_search_form_container">
-					<form role="search" method="get" class="et-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<?php
-						printf( '<input type="search" class="et-search-field" placeholder="%1$s" value="%2$s" name="s" title="%3$s" />',
-							esc_attr__( 'Search &hellip;', 'Divi' ),
-							get_search_query(),
-							esc_attr__( 'Search for:', 'Divi' )
-						);
-					?>
-					</form>
-					<span class="et_close_search_field"></span>
-				</div>
-			</div>
 		</header> <!-- #main-header -->
 
 		<div id="et-main-area">
