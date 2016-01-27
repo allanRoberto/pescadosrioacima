@@ -600,9 +600,9 @@ span.comment_date { color: #000; font-size: 14px; font-weight: 300; }
 	.footer-widget .widget_adsensewidget ins { min-width: 160px; }
 
 	/* Bottom Bar */
-	#footer-bottom { background-color: #1f1f1f; background-color: rgba(0, 0, 0, 0.32); padding: 15px 0 5px; }
+	#footer-bottom { background-color: #1f1f1f; background-color: rgba(0, 0, 0, 0.32); padding: 0px 0 5px; }
 	#footer-bottom a { -moz-transition: all 0.4s ease-in-out; -webkit-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
-	#footer-info { text-align: left; color: #666; padding-bottom: 10px; float: left; }
+	#footer-info { text-align: left; color: #666; padding-bottom: 10px; float: right; }
 	#footer-info a { font-weight: 700; color: #666; }
 	#footer-info a:hover { opacity: .7; }
 

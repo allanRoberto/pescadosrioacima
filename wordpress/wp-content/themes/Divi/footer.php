@@ -1,4 +1,5 @@
 <?php if ( 'on' == et_get_option( 'divi_back_to_top', 'false' ) ) : ?>
+	<?php $template_directory_uri = get_template_directory_uri(); 	?>
 
 	<span class="et_pb_scroll_top et-pb-icon"></span>
 
@@ -37,7 +38,10 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 					}
 				?>
 
-						<p id="footer-info"><?php printf( __( 'Designed by %1$s | Powered by %2$s', 'Divi' ), '<a href="http://www.elegantthemes.com" title="Premium WordPress Themes">Elegant Themes</a>', '<a href="http://www.wordpress.org">WordPress</a>' ); ?></p>
+						<p id="footer-info">
+							<a href="http://saintpaulcomunicacao.com.br" title="Desenvolvido por Saint Paul Comunicação">
+								<img src="<?php echo get_template_directory_uri() . '/images/logotipo-sp.png'; ?>" class="copyright-footer"/>
+							</a>
 					</div>	<!-- .container -->
 				</div>
 			</footer> <!-- #main-footer -->

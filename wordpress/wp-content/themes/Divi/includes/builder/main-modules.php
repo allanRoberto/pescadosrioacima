@@ -8490,9 +8490,9 @@ class ET_Builder_Module_Blog extends ET_Builder_Module {
 						et_gallery_images();
 					elseif ( '' !== $thumb && 'on' === $show_thumbnail ) :
 						if ( 'on' !== $fullwidth ) echo '<div class="et_pb_image_container">'; ?>
-							<a href="<?php the_permalink(); ?>">
+							<div class="container-thumb">
 								<?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
-							</a>
+							</div>
 					<?php
 						if ( 'on' !== $fullwidth ) echo '</div> <!-- .et_pb_image_container -->';
 					endif;
@@ -8500,6 +8500,7 @@ class ET_Builder_Module_Blog extends ET_Builder_Module {
 
 			<?php if ( 'off' === $fullwidth || ! in_array( $post_format, array( 'link', 'audio', 'quote' ) ) ) { ?>
 				<?php if ( ! in_array( $post_format, array( 'link', 'audio' ) ) ) { ?>
+					<?php echo "<div class='container-ingredientes'>"; ?>
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<?php } ?>
 
@@ -8543,6 +8544,10 @@ class ET_Builder_Module_Blog extends ET_Builder_Module {
 							)
 						);
 					}
+					echo "<h3 class='title-receita'>Ingredientes</h3>";
+					the_field('ingredientes');
+					echo "</div>";
+					echo "<div class='clearfix'></div>";
 
 					$post_content = get_the_content();
 

@@ -15,6 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Page Builder Modules Styles */
 @import url("./includes/builder/styles/frontend-builder-style.css?ver=2.5.3");
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Lobster);
+
 @font-face {
     font-family: 'flamencoregular';
     src: url('fonts/flamenco-regular-webfont.eot');
@@ -64,6 +66,35 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	width: 32%;
     margin-top: 25px;
     margin-bottom: 20px;
+}
+
+
+::-webkit-input-placeholder {
+    font-family: 'flamencoregular';
+    font-size: 15px;
+    color: #00adef;
+    text-transform: uppercase;
+}
+
+:-moz-placeholder {
+    font-family: 'flamencoregular';
+    font-size: 15px;
+    color: #00adef;
+    text-transform: uppercase;
+}
+
+::-moz-placeholder {
+    font-family: 'flamencoregular';
+    font-size: 15px;
+    color: #00adef;
+    text-transform: uppercase;
+}
+
+:-ms-input-placeholder {  
+    font-family: 'flamencoregular';
+    font-size: 15px;
+    color: #00adef;
+    text-transform: uppercase;
 }
 
 #logo {
@@ -123,3 +154,112 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin-top: -26px;
   cursor: pointer;
 }
+
+#main-footer {
+	font-family: 'Montserrat', sans-serif !important;
+	text-shadow: 4px 3px 14px rgba(150, 150, 150, 1);
+}
+
+.copyright-footer {
+	float: right;
+	top: -21px;
+	position: relative;
+}
+
+#footer-widgets {
+    padding: 5% 0 0 !important;
+}
+
+.footer-widget h4 {
+	display: table !important;
+}
+
+#main-footer .footer-widget h4:after {
+	content: "";
+    background: url('images/icon-adress.png');
+    float: right;
+    width: 15px;
+    height: 21px;
+    display: table;
+    margin: -3px 0 0 10px;
+}
+
+.container-thumb {
+	width: 45%;
+	float: left;
+	margin-bottom: 35px;
+}
+
+.et_pb_post h2 a {
+	font-family: 'Lobster', cursive;
+	text-decoration: underline;
+	color: #ff9c00;
+}
+
+.title-receita {
+	font-size: 13px;
+    text-transform: uppercase;
+    color: #ff9c00;
+    margin-top: 5px;
+    padding-bottom:0px !important; 
+    margin-left: 10px;
+}
+
+.et_pb_post h2 a:before {
+	content: "";
+	background: url('images/icon-receita.png');
+	width: 30px;
+	height: 23px;
+	display: block;
+	float: left;
+	margin-top: 4px;
+	margin-right: 10px;
+}
+
+.container-ingredientes:before {
+	content: '';
+	background: url('images/title-receitas.jpg');
+	width: 321px;
+	height: 70px;
+	display: block;
+	margin: auto;
+    position: absolute;
+    margin-top: -105px;
+    left: 50%;
+}
+
+.container-ingredientes {
+	padding-top: 70px;
+    float: left;
+    width: 52%;
+
+}
+
+
+.container-ingredientes ul {
+	margin-left: 20px;
+    float: left; 
+}
+
+
+.et_pb_bg_layout_light .et_pb_post p, .container-ingredientes ul li {
+	width: 90%;
+	margin:auto;
+	color: #00adef;
+}
+
+
+.et_pb_bg_layout_light .et_pb_post p strong {
+	color: #ff9c00 !important;
+}
+
+.et_pb_post h2 {
+    margin-top: 35px !important; 
+}
+
+.section-empresa .et_pb_row {
+	background: #eaeeef;
+    padding: 20px 60px 20px;
+    margin-bottom: 70px;
+}
+
